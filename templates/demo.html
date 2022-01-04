@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            background-image: url(static/nww.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: center;
+        }
+        .glow {
+  font-size: 60px;
+  color: black;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;  }
+  
+  to {
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff;
+  }
+}
+
+        .container {
+            height: 80%;
+            width: 60%;
+            margin-left: 20%;
+
+        }
+
+        .bottom-left {
+            margin-left: 5%;
+        }
+
+        .top-left {
+            margin-top: 55%;
+        }
+
+        .grid-container {
+            display: grid;
+            margin-left: 8%;
+            grid-gap: 30px 100px;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+        .grid-item
+        {
+        height: 150px;
+        width: 160px;
+        }
+        .grid-item:hover{
+        box-shadow: 10px 10px 5px grey;
+
+        }
+
+
+      
+    </style>
+</head>
+
+<body>
+    {% if prediction == [0]%}
+	
+
+  <br>
+    <h1 class="glow" style="color:red;">Looking Spam  News </h1>
+
+    
+      {% elif prediction == [1]%}
+<br>
+      <h1 class ="glow" style="color:green;">Looking Real News</h1>
+     
+    
+      {% endif %} 
+   
+    <div class="container">
+   
+        <h1 style="text-align:center;">Here are some trusted sources from where you will only find real news</h1>
+        <div class="grid-container" >
+            <div class="grid-item"><a href="https://economictimes.indiatimes.com/topic/newspaper"><img src="static/et.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://timesofindia.indiatimes.com/defaultinterstitial.cms"><img src="static/toi.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.thehindu.com/"><img src="static/th.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.bbc.com/"><img src="static/bbc.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.bhaskar.com/"><img src="static/dn.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.hindustantimes.com/"><img src="static/images/ht.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.jagran.com/"><img src="static/images/dj.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.naidunia.com/"><img src="static/images/naid.png" style="height:150px; width:160px;"></div></a>
+            <div class="grid-item"><a href="https://www.nytimes.com/international/"><img src="static/images/nyt.png" style="height:150px; width:160px;"></div></a>
+        </div>
+    </div>
+</body>
+
+</html>
